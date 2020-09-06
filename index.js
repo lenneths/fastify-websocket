@@ -17,6 +17,7 @@ function fastifyWebsocket (fastify, opts, next) {
       req[kWs].socket.close()
     }
   
+  opts.options = opts.options || {}
   const options = Object.assign({ server: opts.options.noServer === true ? undefined : fastify.server }, opts.options)
 
   const router = findMyWay({
